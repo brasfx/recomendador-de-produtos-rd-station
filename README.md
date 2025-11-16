@@ -37,47 +37,64 @@ Após instalar a versão correta do Node.js, você pode prosseguir com a instala
  1. Nenhuma biblioteca extra foi adicionada.
  2. Todos os testes foram executados no frontend. Para executar rode: `cd frontend && yarn test` ou dentro de frontend: `yarn test`.
  3. A página foi ajustada para mobile, com isso há uma visualização responsiva independente da resolução.
- 4. De acordo a desrição enviado sobre o deafio, a solução foi aplicada com base no meu entedimento do que deveria ser a entrega.
+ 4. De acordo a descrição enviada sobre o desafio, a solução foi aplicada com base no meu entedimento do que deveria ser a entrega.
  5. Foram criados novos componentes, testes e configurações. Seguem abaixo suas descrições:
 
- - `App.js`
-  Defini a lógica para obter ingformações da API em json-server como produtos, preferências e funcionalidades, além disso é gerido o estado das recomendações, esses dados são compartilhados para os componentes filhos.
- - `App.test.js`
+ - `App.js`  
+
+  Defini a lógica para obter informações da API em json-server como produtos, preferências e funcionalidades, além disso é gerido o estado das recomendações, esses dados são compartilhados para os componentes filhos.
+ - `App.test.js`  
+
   Aqui foram definidos os testes para o App.js, testes simples para verificar se há titulo e descrição e se o RecomendationList.js está sendo renderizado.
 
-- `Form.js`
-  O componente foi ajustado para receber as props provindas do App.js (onRecommendations, products, preferences, features). Com isso consigo receber as informações da API atalziadas e fornecer dados para gerar a recomendação.
+- `Form.js`  
+
+  O componente foi ajustado para receber as props provindas do App.js (onRecommendations, products, preferences, features). Com isso consigo receber as informações da API atualizadas e fornecer dados para gerar a recomendação.
   Adicionei um botão para limpar o formulário e facilitar caso o usuário deseje reiniciar o processo sem ter que desmarcar tudo ou reiniciar a página. A ação limpa todos os estados e resultados gerados.
-- `Form.test.js`
+- `Form.test.js`  
+
   Criei um arquivo de testes para o Form.js para testar as interações e ações de botão (gerar recomendação e limpar formulário) e envio dos dados para gerar recomendação.
 
-- `recommendation.service.js`
+- `recommendation.service.js`  
+
   Inseri a lógica no componente para gerar o perfil desejado de acordo as features/preferences e modo (único ou multiplo) definidas pelo usuário. Criei uma função auxiliar desacoplada para calcular o score, enum para facilitar o uso do modo de produto. Deixei comentários em cada parte do código afim de facilitar a explicação e entedimento do mesmo.
-- `recommendation.service.test.js`
+- `recommendation.service.test.js`  
+
   Os testes estavam basicamente prontos, validei somente a lógica por trás e usei deles para entender se minha resolução fazia sentido. Somente um teste precisou de ajuste, deixei comentado e ajustado como deveria ser.
 
- - `Card.js (RecommendationsList)`
+ - `Card.js (RecommendationsList)`  
+
   Crie um componente de card, afim de melhorar a visualização da recomendação gerada. Com isso além do nome do cargo e tipo, é possível ver as preferências e funcionalidades daquela recomendação. Como é um componente que por momento não precisaria ser usado para outro aspecto, mantive junto a pasta no componente pai, mas como ele recebe props especificas, pode ser reutilizado ou movido para ser compartilhado à outras features, se necessário.
 
-- `Radio.js`
+- `Radio.js`  
+
   Criei esse componente de radio para ser usado no RecommendationType.js. Ele usava o mesmo componente para Preferences e Features, mudando apenas o tipo. Porém ao meu ver afim de insrir testes e ou configurações, sejam eles em estrutura, ação ou apenas design, talvez não se deseje o mesmo resultado em ambos os locais. 
 
-- `Button.js(SubmitButton.js)`
+- `Button.js(SubmitButton.js)`  
+
   Alterei o SubmitButton.js para Button.js afim de fazê lo um componente reutilizavel, apenas inserindo novas props para tipo, variação e recebendo demais props de um button padrão. Isso me permitou reutilizar o botão para gerar recomendação e limpar o form, com a mesma estrutura e só passando o que necessitava.
-- `Button.test.js`
+- `Button.test.js`  
+
   Fiz alguns testes para o botão como verificar variação (primary, secondary), estado de desabilitado, clique no botão.
 
-- `assets/images`
+- `assets/images`  
+
   Criei a pasta somente para isnerir um logo para ser usado no App.js
 
-- `tailwind.config.js`
+- `tailwind.config.js`  
+
   Inseri algumas cores, tipografia e sombras para utilizar em alguns locais.
 
-## Melhorias desejadas(faltou tempo para implemnetar)
-  Aplicar tipagem aos componentes.
-  Criar um estado de persistência para o form e recomendação gerada após um refesh da página.
-  Melhorias esteticas na interface.
-  Mais alguns testes para cobrir tudo.
+## Melhorias desejadas(faltou tempo para implemnetar)  
+
+  1. Aplicar tipagem aos componentes.  
+
+  2. Criar um estado de persistência para o form e recomendação gerada após um refesh da página.  
+
+  3. Melhorias esteticas na interface.  
+
+  4. Mais alguns testes para cobrir tudo.  
+
 
 ## Como Executar
 
@@ -113,4 +130,4 @@ Desenvolvido por Davi Ribeiro
 
 Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
-Happy Hacking! xD
+#Happy Hacking! xD
