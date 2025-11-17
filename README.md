@@ -42,10 +42,10 @@ Após instalar a versão correta do Node.js, você pode prosseguir com a instala
 
  - `App.js`  
 
-  Defini a lógica para obter informações da API em json-server como produtos, preferências e funcionalidades, além disso é gerido o estado das recomendações, esses dados são compartilhados para os componentes filhos.
+    Defini a lógica para obter informações da API em json-server como produtos, preferências e funcionalidades, além disso é gerido o estado das recomendações, esses dados são compartilhados para os componentes filhos.
  - `App.test.js`  
 
-  Aqui foram definidos os testes para o App.js, testes simples para verificar se há titulo e descrição e se o RecomendationList.js está sendo renderizado.
+    Aqui foram definidos os testes para o App.js, testes simples para verificar se há titulo e descrição e se o RecomendationList.js está sendo renderizado.
 
 - `Form.js`  
 
@@ -64,7 +64,7 @@ Após instalar a versão correta do Node.js, você pode prosseguir com a instala
 
  - `Card.js (RecommendationsList)`  
 
-  Crie um componente de card, afim de melhorar a visualização da recomendação gerada. Com isso além do nome do cargo e tipo, é possível ver as preferências e funcionalidades daquela recomendação. Como é um componente que por momento não precisaria ser usado para outro aspecto, mantive junto a pasta no componente pai, mas como ele recebe props especificas, pode ser reutilizado ou movido para ser compartilhado à outras features, se necessário.
+    Crie um componente de card, afim de melhorar a visualização da recomendação gerada. Com isso além do nome do cargo e tipo, é possível ver as preferências e funcionalidades daquela recomendação. Como é um componente que por momento não precisaria ser usado para outro aspecto, mantive junto a pasta no componente pai, mas como ele recebe props especificas, pode ser reutilizado ou movido para ser compartilhado à outras features, se necessário.
 
 - `Radio.js`  
 
