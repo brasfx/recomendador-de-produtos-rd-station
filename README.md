@@ -79,13 +79,13 @@ Após instalar a versão correta do Node.js, você pode prosseguir com a instala
 
 - `assets/images`  
 
-  Criei a pasta somente para isnerir um logo para ser usado no App.js
+  Criei a pasta somente para inserir um logo para ser usado no App.js
 
 - `tailwind.config.js`  
 
   Inseri algumas cores, tipografia e sombras para utilizar em alguns locais.
 
-## Melhorias desejadas(faltou tempo para implemnetar)  
+## Melhorias desejadas(faltou tempo para implementar)  
 
   1. Aplicar tipagem aos componentes.  
 
