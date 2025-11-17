@@ -10,7 +10,7 @@ function RecommendationList({ recommendations }) {
 
   return (
     <div className="p-6 bg-white rounded-lg">
-      <h2 className="text-lg font-bold mb-4">Lista de Recomendações:</h2>
+      <h2 className="text-lg font-bold mb-8">Lista de Recomendações:</h2>
 
       {recommendations.length === 0 && <p>Nenhuma recomendação encontrada.</p>}
 
@@ -24,6 +24,8 @@ function RecommendationList({ recommendations }) {
               isExpanded={isExpanded}
               recomendation={recomendation}
               expandCard={handleExpand}
+              isBest={index === 0}
+              isSingle={recommendations.length === 1}
             />
           );
         })}

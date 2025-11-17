@@ -40,9 +40,10 @@ describe('recommendationService', () => {
     //RD Station CRM = 2 preferências + 1 feature = 3
     //RD Station Marketing = 1 preferência + 1 features = 2
 
-    expect(recommendations).toHaveLength(1); // Esperava-se 2 produtos recomendados mas o correto é 1
+    expect(recommendations).toHaveLength(2);
     expect(recommendations.map((product) => product.name)).toEqual([
       'RD Station CRM',
+      'RD Station Marketing',
     ]);
   });
 

@@ -35,10 +35,11 @@ Após instalar a versão correta do Node.js, você pode prosseguir com a instala
 ## Desenvolvimento e melhorias aplicadas
 
  1. Nenhuma biblioteca extra foi adicionada.
- 2. Todos os testes foram executados no frontend. Para executar rode: `cd frontend && yarn test` ou dentro de frontend: `yarn test`.
- 3. A página foi ajustada para mobile, com isso há uma visualização responsiva independente da resolução.
- 4. De acordo a descrição enviada sobre o desafio, a solução foi aplicada com base no meu entedimento do que deveria ser a entrega.
- 5. Foram criados novos componentes, testes e configurações. Seguem abaixo suas descrições:
+ 2. Percebi que as features e preferences trazidas pela API do json-server não são totais, são apenas 8 das 12 de cada opção. Com isso alguns testes via interface eram mais dificeis de serem executados. Não sei se foi proposital, mas deixo aqui o feedback sobre a situação.
+ 3. Todos os testes foram executados e aprvados no frontend. Para executar rode: `cd frontend && yarn test` ou dentro de frontend: `yarn test`.
+ 4. A página foi ajustada para mobile, com isso há uma visualização responsiva independente da resolução.
+ 5. De acordo a descrição enviada sobre o desafio, a solução foi aplicada com base no meu entedimento do que deveria ser a entrega.
+ 6. Foram criados novos componentes, testes e configurações. Seguem abaixo suas descrições:
 
  - `App.js`  
 
@@ -58,13 +59,15 @@ Após instalar a versão correta do Node.js, você pode prosseguir com a instala
 - `recommendation.service.js`  
 
   Inseri a lógica no componente para gerar o perfil desejado de acordo as features/preferences e modo (único ou multiplo) definidas pelo usuário. Criei uma função auxiliar desacoplada para calcular o score, enum para facilitar o uso do modo de produto. Deixei comentários em cada parte do código afim de facilitar a explicação e entedimento do mesmo.
+  Deixei duas versões no código, uma para melhor match (score maior), onde ela filtra somente as melhores recomendações definidas pela maior pontuação, essa versão está comentada. A outra retorna produtos que possuam match diferente de zero quando modo multi e a ultima recomendação da lista em modo single (versão que entendi que seria para entrega, de acordo os testes já escritos).
 - `recommendation.service.test.js`  
 
-  Os testes estavam basicamente prontos, validei somente a lógica por trás e usei deles para entender se minha resolução fazia sentido. Somente um teste precisou de ajuste, deixei comentado e ajustado como deveria ser.
+  Os testes estavam basicamente prontos, validei somente a lógica por trás e usei deles para entender se minha resolução fazia sentido. Somente um teste achei que precisaria de ajuste, de acordo a lógica de melhor match ou match > 0. Porém mantive como estavam e todos passaram.
 
  - `Card.js (RecommendationsList)`  
 
     Crie um componente de card, afim de melhorar a visualização da recomendação gerada. Com isso além do nome do cargo e tipo, é possível ver as preferências e funcionalidades daquela recomendação. Como é um componente que por momento não precisaria ser usado para outro aspecto, mantive junto a pasta no componente pai, mas como ele recebe props especificas, pode ser reutilizado ou movido para ser compartilhado à outras features, se necessário.
+    Na versão de multiplos produtos, o card exibe uma visualização diferente, inserindo uma borda na melhor recomendação, inclui a quantidade de matches(de acordo preferências e funcionalidades) e dá um destaque nas caracteristicas selecionadas.
 
 - `Radio.js`  
 
@@ -85,13 +88,16 @@ Após instalar a versão correta do Node.js, você pode prosseguir com a instala
 
   Inseri algumas cores, tipografia e sombras para utilizar em alguns locais.
 
+- `Stars.js`  
+  Componente para informar por meio de estrelas o match do produto de acordo as preferencias e funcionalidades escolhidas.
+
 ## Melhorias desejadas(faltou tempo para implementar)  
 
   1. Aplicar tipagem aos componentes.  
 
   2. Criar um estado de persistência para o form e recomendação gerada após um refesh da página.  
 
-  3. Melhorias esteticas na interface.  
+  3. Melhorias esteticas na interface. Se houvessem mais informações da regra de negócio, daria pra ter niveis diferentes de indicação e com isso definir cores e mais insumos para escolha de um produto. 
 
   4. Mais alguns testes para cobrir tudo.  
 
@@ -130,4 +136,4 @@ Desenvolvido por Davi Ribeiro
 
 Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
-# Happy Hacking! xD
+## Happy Hacking! xD
